@@ -1,0 +1,168 @@
+/* Basic */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+nav {
+    background: linear-gradient(229deg, rgba(2, 0, 36, 1) 0%, rgba(4, 52, 67, 1) 33%, rgba(13, 138, 159, 1) 100%);
+    padding: 5px 20px;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.logo a:hover {
+    text-decoration: none;
+}
+
+.menu li {
+    font-size: 15px;
+    padding: 15px 5px;
+    white-space: nowrap;
+
+}
+
+.logo a,
+.toggle a {
+    font-size: 20px;
+}
+
+.button.secondary {
+    border-bottom: 1px solid #fff;
+}
+
+/* Mobile Menu */
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    /* order: 0; by default no need */
+}
+
+.toggle {
+    order: 1;
+}
+
+.item.button {
+    order: 2;
+}
+
+.item {
+    width: 100%;
+    text-align: center;
+    order: 3;
+    display: none;
+}
+
+.item.active {
+    display: block;
+}
+
+/* Tablet Menu */
+@media all and (min-width: 600px) {
+    .menu {
+        justify-content: center;
+    }
+
+    .logo {
+        flex-grow: 1;
+    }
+
+    .toggle {
+        flex-grow: 1;
+        text-align: right;
+    }
+
+    .item.button {
+        width: auto;
+        order: 1;
+        display: block;
+    }
+
+    .toggle {
+        order: 2;
+
+    }
+
+    .button.secondary {
+        border: 0;
+    }
+
+    .button a {
+        padding: 7.5px 15px;
+        background: teal;
+        border: 1px #006d6d solid;
+    }
+
+    .button.secondary a {
+        background: transparent;
+    }
+
+    .button a:hover {
+        text-decoration: none;
+    }
+
+    .button:not(.secondary) a:hover {
+        background: #006d6d;
+        border-color: #005959;
+    }
+
+    .button.secondary a:hover {
+        color: #ddd;
+    }
+
+
+
+
+}
+
+/* Desktop */
+
+@media all and (min-width:900px) {
+    .item {
+        display: block;
+        width: auto;
+    }
+
+    .toggle {
+        display: none;
+    }
+
+    .logo {
+        order: 0;
+    }
+
+    .item {
+        order: 1;
+    }
+
+    .button {
+        order: 2;
+    }
+
+    .menu li {
+        padding: 15px 10px;
+    }
+
+    .menu li.button {
+        padding-right: 0;
+    }
+
+}
